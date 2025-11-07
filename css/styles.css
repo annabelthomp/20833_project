@@ -1,27 +1,184 @@
-h1, h2 {
-  color: purple;
+/* =========================
+   Basic Reset & Typography
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-p {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+                 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-header, footer {
-    border-style:solid;
-    border-color: purple;
+/* At the top of your CSS, define your colors */
+:root {
+    --primary-color: #4d1979;      /* TCU Purple */
+    --secondary-color: #7c3aed;    /* Light Purple */
+    --accent-color: #ffd700;       /* Gold accent */
+    --text-color: #333;            /* Dark gray for text */
+    --bg-color: #f4f4f4;           /* Light background */
+    --white: #ffffff;
+}
+
+/* Then use them with semantic selectors */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+main section h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+/* Style semantic tags directly - no classes needed! */
+header {
+    background-color: #4d1979;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: white;
+    margin: 1rem 0;
+    font-size: 2rem;
 }
 
 nav {
-    border-style:solid;
-    border-color: yellow;
+    background-color: #3d1461;
+    padding: 0.75rem;
+    display: flex;              /* Make nav a flex container */
+    justify-content: center;    /* Center the ul inside nav */
 }
 
-main{
-    border-style:solid;
-    border-color: black;
+/* Style the navigation list */
+nav ul {
+    list-style: none;           /* Remove bullets */
+    padding: 0;                 /* Remove default padding */
+    margin: 0;                  /* Remove default margin */
+    display: flex;              /* Arrange items horizontally */
+    flex-direction: row;        /* Explicit: horizontal on desktop (this is the default) */
+    justify-content: center;    /* Center the items */
+    gap: 1rem;                  /* Space between items */
+    flex-wrap: wrap;            /* Wrap on small screens */
 }
 
-section{
-    border-style:solid;
-    border-color: green;
+nav li {
+    list-style: none;           /* Extra insurance - remove bullets from li too */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #4d1979;
+}
+
+/* =========================
+   Main Content
+   ========================= */
+/* Style main semantic tag directly */
+main {
+    max-width: 900px;          /* Don't get too wide */
+    margin: 2rem auto;         /* Center horizontally */
+    padding: 0 1rem;           /* Space on sides for mobile */
+}
+
+/* All sections inside main get consistent styling */
+main section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;       /* Space between sections */
+    border-radius: 8px;        /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style h2 headings inside sections */
+main section h2 {
+    color: #4d1979;
+    border-bottom: 3px solid #7c3aed;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs inside sections */
+main section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+/* =========================
+   Classes for Variations
+   ========================= */
+/* Use a class when you need a SPECIAL version of something */
+.highlight-section {
+    background-color: #f0e7f8;
+    padding: 1rem;
+    border-left: 4px solid #7c3aed;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+/* Links that go outside your site can be styled differently */
+a[href^="http"] {
+    color: #4d1979;
+    font-weight: bold;
+}
+
+a[href^="http"]:hover {
+    color: #7c3aed;
+}
+
+/* =========================
+   Footer (semantic tag)
+   ========================= */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;     /* Smaller on mobile */
+    }
+
+    nav {
+        font-size: 0.9rem;
+    }
+
+    /* Stack navigation vertically on mobile */
+    nav ul {
+        flex-direction: column;  /* Change from row to column */
+        align-items: center;     /* Center the stacked items */
+    }
+
+    nav a {
+        display: block;          /* Full width for easier tapping */
+        width: 100%;
+        text-align: center;
+    }
+
+    main section {
+        padding: 1rem;         /* Less padding on mobile */
+    }
 }
