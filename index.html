@@ -1,103 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project Home</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Glee Character Are You?</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Which Glee Character Are You? 🎵</h1>
+            <p class="subtitle">Answer these questions to find out which New Directions member matches your personality!</p>
+        </header>
 
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    
-    <body>
+        <div id="quiz-container">
+            <form id="quiz-form">
+                <!-- Question 1 -->
+                <div class="question">
+                    <h3>1. What's your go-to karaoke song?</h3>
+                    <label><input type="radio" name="q1" value="rachel"> A show-stopping Broadway ballad</label>
+                    <label><input type="radio" name="q1" value="finn"> A classic rock anthem</label>
+                    <label><input type="radio" name="q1" value="kurt"> A dramatic pop diva hit</label>
+                    <label><input type="radio" name="q1" value="mercedes"> A powerful R&B number</label>
+                    <label><input type="radio" name="q1" value="blaine"> An upbeat pop song</label>
+                    <label><input type="radio" name="q1" value="santana"> A sassy, confident track</label>
+                </div>
 
-        <nav>
+                <!-- Question 2 -->
+                <div class="question">
+                    <h3>2. How would your friends describe you?</h3>
+                    <label><input type="radio" name="q2" value="rachel"> Ambitious and driven</label>
+                    <label><input type="radio" name="q2" value="finn"> Loyal and kind-hearted</label>
+                    <label><input type="radio" name="q2" value="kurt"> Creative and fabulous</label>
+                    <label><input type="radio" name="q2" value="mercedes"> Confident and talented</label>
+                    <label><input type="radio" name="q2" value="blaine"> Charming and optimistic</label>
+                    <label><input type="radio" name="q2" value="santana"> Bold and witty</label>
+                </div>
 
-    <ul>
-        <li><a href="home">Home  </a></li>
-        <li><a href="overview">Overview  </a></li>
-        <li><a href="background">Background  </a></li>
-        <li><a href="methodology">Methodology  </a></li>
-        <li><a href="analysis">Analysis  </a></li>
-        <li><a href="findings">Findings</a></li>
-   
-    </ul>
-       
-    </nav>
+                <!-- Question 3 -->
+                <div class="question">
+                    <h3>3. What's your biggest strength?</h3>
+                    <label><input type="radio" name="q3" value="rachel"> Determination and talent</label>
+                    <label><input type="radio" name="q3" value="finn"> Leadership and compassion</label>
+                    <label><input type="radio" name="q3" value="kurt"> Individuality and style</label>
+                    <label><input type="radio" name="q3" value="mercedes"> Powerful voice and self-respect</label>
+                    <label><input type="radio" name="q3" value="blaine"> Positivity and charm</label>
+                    <label><input type="radio" name="q3" value="santana"> Honesty and loyalty (even if it's tough love)</label>
+                </div>
 
-    <header>
+                <!-- Question 4 -->
+                <div class="question">
+                    <h3>4. What's your ideal weekend activity?</h3>
+                    <label><input type="radio" name="q4" value="rachel"> Practicing for an audition</label>
+                    <label><input type="radio" name="q4" value="finn"> Playing sports with friends</label>
+                    <label><input type="radio" name="q4" value="kurt"> Shopping or working on a creative project</label>
+                    <label><input type="radio" name="q4" value="mercedes"> Singing at church or with friends</label>
+                    <label><input type="radio" name="q4" value="blaine"> Hanging out at a coffee shop</label>
+                    <label><input type="radio" name="q4" value="santana"> Something competitive or adventurous</label>
+                </div>
 
-   
+                <!-- Question 5 -->
+                <div class="question">
+                    <h3>5. How do you handle conflict?</h3>
+                    <label><input type="radio" name="q5" value="rachel"> I face it head-on and state my case</label>
+                    <label><input type="radio" name="q5" value="finn"> I try to mediate and find compromise</label>
+                    <label><input type="radio" name="q5" value="kurt"> I express myself creatively</label>
+                    <label><input type="radio" name="q5" value="mercedes"> I stand up for myself with confidence</label>
+                    <label><input type="radio" name="q5" value="blaine"> I stay positive and work it out</label>
+                    <label><input type="radio" name="q5" value="santana"> I'm not afraid to speak my mind</label>
+                </div>
 
-        <h1>Welcome to the Project Home</h1>
+                <!-- Question 6 -->
+                <div class="question">
+                    <h3>6. What's most important to you?</h3>
+                    <label><input type="radio" name="q6" value="rachel"> Achieving my dreams</label>
+                    <label><input type="radio" name="q6" value="finn"> Being there for the people I care about</label>
+                    <label><input type="radio" name="q6" value="kurt"> Being true to myself</label>
+                    <label><input type="radio" name="q6" value="mercedes"> Respect and recognition</label>
+                    <label><input type="radio" name="q6" value="blaine"> Making others happy</label>
+                    <label><input type="radio" name="q6" value="santana"> Authenticity and loyalty</label>
+                </div>
 
-</header>
+                <button type="submit" class="submit-btn">Find Out My Character!</button>
+            </form>
+        </div>
 
-<main>
-    
-        <section id="overview">
+        <div id="result-container" style="display: none;">
+            <h2>You are...</h2>
+            <div id="result-content"></div>
+            <button id="restart-btn" class="submit-btn">Take Quiz Again</button>
+        </div>
+    </div>
 
-            <h2>Project Overview</h2>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur consequatur vero est! Voluptates, natus excepturi. Repudiandae iusto dolor id ratione magni iure omnis! Illo non modi at dolore nulla fugiat.</p>
-
-        </section>
-
-        <section id="background">
-
-            <h2>Background</h2>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-        </section>
-
-        <section id="methodology">
-
-            <h2>Methodology</h2>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-        </section>
-
-        <section id="analysis">
-
-            <h2>Analysis</h2>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-        </section>
-
-        <section id="findings">
-
-            <h2>Findings</h2>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum, voluptates alias repellendus ex ad totam minima et consequatur at id inventore reprehenderit distinctio, voluptatibus exercitationem reiciendis molestiae? Inventore, mollitia.</p>
-
-        </section>
-
-    </main>
-
-<footer>
-
-    <p>&copy; 2025 Project Home. All rights reserved.</p>
-    <p>Contact Me:<a href="mailto:agaskinthompson@icloud.com">agaskinthompson@icloud.com</a></p>
-</footer>
-
-
+    <script src="js/script.js"></script>
 </body>
 </html>
